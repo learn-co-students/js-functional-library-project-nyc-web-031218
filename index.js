@@ -48,7 +48,7 @@ fi = (function() {
             for (let i = 0; i < collection.length; i++)
             if (predicate(collection[i])) newArr.push(collection[i])
 
-        return newArr
+            return newArr
 },
 
     size: function(collection) {
@@ -69,7 +69,7 @@ fi = (function() {
                 newArr.push(callback(val))
                 this.iSortLast(newArr)
               }
-    return newArr
+            return newArr
 },
 
     flatten: function(collection, shallow, newArr=[]) {
@@ -82,7 +82,7 @@ fi = (function() {
                 this.flatten(val, false, newArr)
                 }
               }
-        return newArr
+              return newArr
 },
 
     uniqSorted: function(collection, iteratee) {
@@ -109,7 +109,7 @@ fi = (function() {
                 uniqVals.add(val)
                 }
               }
-    return Array.from(uniqVals)
+            return Array.from(uniqVals)
             }
 },
 
@@ -121,7 +121,7 @@ fi = (function() {
                   functionNames.push(key)
                 }
               }
-          return functionNames.sort()
+              return functionNames.sort()
 },
   }
 })()

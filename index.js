@@ -30,15 +30,15 @@ fi = (function() {
             return acc
     },
 
-    functions: function(collection, iteratee) {
-              if (!(collection instanceof Array))
-              collection = Object.values(collection)
-              for (let i = 0; i < collection.length; i++)
-              if (predicate(collection[i])) return true
-              return false
-    },
-
-
+    functions: function(obj) {
+              const functionNames = []
+              for (let key in obj) {
+              if (typeof obj[key] === "function"){
+              functionNames.push(key)
+                  }
+                }
+              return functionNames.sort()
+              },
   }
 })()
 

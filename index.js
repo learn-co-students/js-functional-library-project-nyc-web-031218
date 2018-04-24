@@ -5,38 +5,37 @@ fi = (function() {
     },
 
     each: function(collection, iteratee) {
-      const newCollection = (collection instanceof Array) ? collection.slice() : Object.values(collection)
-
+        const newCollection = (collection instanceof Array) ? collection.slice() : Object.values(collection)
         for (let i = 0; i < newCollection.length; i++)
         iteratee(newCollection[i])
         return collection
     },
 
     map: function(collection, iteratee) {
-      if (!(collection instanceof Array))
+        if (!(collection instanceof Array))
         collection = Object.values(collection)
 
         const newArr = []
 
         for (let i = 0; i < collection.length; i++)
         newArr.push(iteratee(collection[i]))
-    return newArr
+        return newArr
     },
 
     reduce: function(collection, iteratee) {
-      if (!(collection instanceof Array))
-        collection = Object.values(collection)
-      for (let i = 0; i < collection.length; i++)
-        acc = iteratee(acc, collection[idx], collection)
-      return acc
+            if (!(collection instanceof Array))
+            collection = Object.values(collection)
+            for (let i = 0; i < collection.length; i++)
+            acc = iteratee(acc, collection[i], collection)
+            return acc
     },
 
     functions: function(collection, iteratee) {
-      if (!(collection instanceof Array))
-        collection = Object.values(collection)
-      for (let idx = 0; i < collection.length; i++)
-        if (predicate(collection[idx])) return true
-      return false
+              if (!(collection instanceof Array))
+              collection = Object.values(collection)
+              for (let i = 0; i < collection.length; i++)
+              if (predicate(collection[i])) return true
+              return false
     },
 
 
